@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Ganesh Polimera | Data Analyst Portfolio</title>
+  <meta name="description" content="Portfolio of Ganesh Polimera - Data Analyst. Projects, resume, skills, contact, and more.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4f8cff;
+      --secondary: #22223b;
+      --accent: #f8f9fa;
+      --highlight: #ffd166;
+      --card1: #e0f7fa;
+      --card2: #ffe0f7;
+      --card3: #e0ffe6;
+      --card4: #fffbe0;
+      --card5: #e0e0ff;
+      --radius: 18px;
+      --shadow: 0 2px 16px rgba(79,140,255,0.09);
+      --transition: 0.3s cubic-bezier(.68,-0.55,.27,1.55);
+    }
+    html, body {
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+      color: var(--secondary);
+      scroll-behavior: smooth;
+    }
+    body {
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1s .2s forwards;
+    }
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: none; }
+    }
+    header {
+      background: linear-gradient(90deg, var(--primary) 60%, #6dd5ed 100%);
+      color: #fff;
+      padding: 2.5rem 1rem 1.5rem 1rem;
+      text-align: center;
+      border-radius: 0 0 var(--radius) var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    header img {
+      width: 120px;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+      margin-bottom: 1rem;
+      transition: transform .4s cubic-bezier(.68,-0.55,.27,1.55);
+    }
+    header img:hover {
+      transform: rotate(-10deg) scale(1.08);
+    }
+    header h1 {
+      margin: 0.2rem 0 0.5rem 0;
+      font-size: 2.7rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+    header p {
+      margin: 0.2rem 0 0.5rem 0;
+      font-size: 1.15rem;
+      letter-spacing: 0.5px;
+      opacity: 0.96;
+    }
+    nav {
+      margin: 1.5rem 0 0 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    nav a {
+      color: #fff;
+      background: var(--highlight);
+      padding: 0.5rem 1.3rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.05rem;
+      margin: 0 0.2rem;
+      box-shadow: 0 2px 8px rgba(255,209,102,0.10);
+      transition: background var(--transition), transform 0.2s;
+      position: relative;
+      overflow: hidden;
+      outline: none;
+      border: none;
+      cursor: pointer;
+    }
+    nav a:active, nav a.bounce {
+      animation: bounceBtn 0.4s;
+    }
+    @keyframes bounceBtn {
+      0% { transform: scale(1);}
+      40% { transform: scale(1.18);}
+      100% { transform: scale(1);}
+    }
+    .container {
+      max-width: 950px;
+      margin: 2.5rem auto;
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2.2rem 2rem;
+      animation: fadeInUp 1s .5s backwards;
+    }
+    section {
+      margin-bottom: 2.7rem;
+    }
+    h2 {
+      color: var(--primary);
+      margin-top: 0;
+      margin-bottom: 1.1rem;
+      font-size: 1.7rem;
+      border-bottom: 2px solid var(--primary);
+      display: inline-block;
+      padding-bottom: 0.2rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .contact-info, .social-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .contact-info li, .social-links li {
+      background: var(--accent);
+      padding: 0.7rem 1.2rem;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 1px 5px rgba(79,140,255,0.05);
+      transition: background 0.25s;
+    }
+    .contact-info li:hover, .social-links li:hover {
+      background: #e3f2fd;
+    }
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem;
+      margin-top: 1.5rem;
+    }
+    .skill-card {
+      flex: 1 1 170px;
+      min-width: 150px;
+      max-width: 210px;
+      background: var(--card1);
+      border-radius: var(--radius);
+      padding: 1.1rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(79,140,255,0.07);
+      transition: transform .25s, box-shadow .25s, background .25s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid transparent;
+    }
+    .skill-card:nth-child(2) { background: var(--card2);}
+    .skill-card:nth-child(3) { background: var(--card3);}
+    .skill-card:nth-child(4) { background: var(--card4);}
+    .skill-card:nth-child(5) { background: var(--card5);}
+    .skill-card:nth-child(6) { background: #fbeee6;}
+    .skill-card:hover {
+      transform: translateY(-8px) scale(1.04) rotate(-2deg);
+      background: #fffbe0;
+      box-shadow: 0 8px 32px rgba(255,209,102,0.12);
+      border: 2px solid var(--highlight);
+      z-index: 2;
+    }
+    .skill-card i {
+      font-size: 1.6rem;
+      color: var(--primary);
+      filter: drop-shadow(0 2px 4px rgba(79,140,255,0.13));
+      transition: color .3s;
+    }
+    .skill-card:hover i {
+      color: #ffd166;
+    }
+    .resume-link {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 0.7rem 1.5rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 0.5rem;
+      font-size: 1.09rem;
+      box-shadow: 0 2px 8px rgba(79,140,255,0.10);
+      transition: background var(--transition), transform .2s;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .resume-link:active, .resume-link.bounce {
+      animation: bounceBtn 0.4s;
+    }
+    .project {
+      border: 1px solid #ececec;
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      margin-bottom: 1.5rem;
+      background: #f9f9f9;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(79,140,255,0.07);
+      position: relative;
+      overflow: hidden;
+    }
+    .project img {
+      width: 220px;
+      border-radius: var(--radius);
+      object-fit: cover;
+      background: #eee;
+      margin-bottom: 0.7rem;
+      box-shadow: 0 4px 24px rgba(79,140,255,0.10);
+      animation: floatImg 2.5s ease-in-out infinite alternate;
+      transition: transform .3s;
+    }
+    @keyframes floatImg {
+      0% { transform: translateY(0);}
+      100% { transform: translateY(-12px);}
+    }
+    .project-content {
+      flex: 1 1 260px;
+      min-width: 260px;
+    }
+    .project-links a {
+      margin-right: 1rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s, transform .2s;
+      border-radius: 999px;
+      padding: 0.3rem 0.9rem;
+      background: #e3f2fd;
+      display: inline-block;
+      margin-top: 0.5rem;
+      box-shadow: 0 1px 5px rgba(79,140,255,0.06);
+    }
+    .project-links a:hover {
+      color: #fff;
+      background: var(--primary);
+      transform: scale(1.05) rotate(-2deg);
+    }
+    ul, li {
+      margin: 0;
+      padding: 0;
+    }
+    .awards-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .awards-list li {
+      background: var(--card3);
+      padding: 0.7rem 1.2rem;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 1px 5px rgba(79,140,255,0.05);
+    }
+    @media (max-width: 900px) {
+      .container { padding: 1rem; }
+      .project { flex-direction: column; }
+      .project img { width: 100%; }
+      .skills-grid { flex-direction: column; }
+      .skill-card { max-width: 100%; }
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.1rem;}
+      .container { padding: 0.6rem;}
+      .project-content { min-width: 0;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="Ganesh.jpg" alt="Ganesh Polimera photo">
+    <h1>Ganesh Polimera</h1>
+    <p>Data Analyst | Network Management | IT Support</p>
+    <nav>
+      <a href="#contact">Contact</a>
+      <a href="#resume">Resume</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#certifications">Certifications</a>
+    </nav>
+  </header>
+  <div class="container">
+    <section id="contact">
+      <h2>Contact Information</h2>
+      <ul class="contact-info">
+        <li><i class="fas fa-map-marker-alt"></i> Oklahoma, USA</li>
+        <li><i class="fas fa-phone"></i> (572) 208-8034</li>
+        <li><i class="fas fa-envelope"></i> <a href="mailto:ganeshpolimera0@gmail.com">ganeshpolimera0@gmail.com</a></li>
+      </ul>
+      <ul class="social-links" style="margin-top:1rem;">
+        <li><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/ganesh-polimera" target="_blank">LinkedIn</a></li>
+      </ul>
+    </section>
+
+    <section id="resume">
+      <h2>Resume</h2>
+      <a class="resume-link" href="Data Analyst.pdf" download><i class="fas fa-file-download"></i> Download Resume (PDF)</a>
+    </section>
+
+    <section id="summary">
+      <h2>Summary</h2>
+      <p>
+        <strong>Network Management:</strong> Managed LAN/WAN infrastructure, optimized performance, and ensured network reliability.<br>
+        <strong>IT Support & Troubleshooting:</strong> Resolved technical issues efficiently using ticketing systems and clear documentation.<br>
+        <strong>Leadership & Certifications:</strong> Led upgrade projects, trained peers, and applied CCNA & AWS knowledge to enhance team skills.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills & Technologies</h2>
+      <div class="skills-grid">
+        <div class="skill-card"><i class="fas fa-network-wired"></i> LAN/WAN Support</div>
+        <div class="skill-card"><i class="fas fa-brands fa-java"></i> Java</div>
+        <div class="skill-card"><i class="fas fa-fire-extinguisher"></i> Firewalls</div>
+        <div class="skill-card"><i class="fas fa-sitemap"></i> IP Configuration</div>
+        <div class="skill-card"><i class="fas fa-chart-line"></i> Network Monitoring</div>
+        <div class="skill-card"><i class="fas fa-ticket-alt"></i> Ticketing Systems</div>
+        <div class="skill-card"><i class="fab fa-git-alt"></i> Git/GitHub</div>
+        <div class="skill-card"><i class="fas fa-plug"></i> REST/SOAP APIs</div>
+        <div class="skill-card"><i class="fas fa-file-excel"></i> Excel</div>
+        <div class="skill-card"><i class="fas fa-chart-pie"></i> PowerBI</div>
+        <div class="skill-card"><i class="fab fa-php"></i> PHP</div>
+        <div class="skill-card"><i class="fab fa-js-square"></i> JavaScript</div>
+        <div class="skill-card"><i class="fab fa-html5"></i> HTML5</div>
+        <div class="skill-card"><i class="fab fa-css3-alt"></i> CSS3</div>
+        <div class="skill-card"><i class="fas fa-database"></i> MySQL</div>
+        <div class="skill-card"><i class="fas fa-database"></i> pgAdmin</div>
+        <div class="skill-card"><i class="fab fa-wordpress"></i> WordPress</div>
+        <div class="skill-card"><i class="fab fa-shopify"></i> Shopify</div>
+        <div class="skill-card"><i class="fas fa-globe"></i> Wix</div>
+        <div class="skill-card"><i class="fas fa-cogs"></i> System Administration</div>
+        <div class="skill-card"><i class="fas fa-mobile-alt"></i> Responsive UI/UX</div>
+        <div class="skill-card"><i class="fas fa-server"></i> Web Hosting & Deployment</div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div>
+        <h3>OpenText | GIS Developer <span style="font-weight:normal;">(Dec 2022 - Jun 2023)</span></h3>
+        <ul>
+          <li>Built and improved internal web tools using JavaScript and SQL, contributing to GIS analytics and dashboards.</li>
+          <li>Developed filtering and time zone alignment logic for critical test data (DRP-related), improving data consistency.</li>
+          <li>Participated in product enhancement sprints and collaborated with cross-functional teams.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>DPD Housing India Pvt. Ltd. | Admin & Web Developer <span style="font-weight:normal;">(June 2021 – Nov 2022)</span></h3>
+        <ul>
+          <li>Administered LAN/WAN configurations and provided real-time IT support for 50+ internal users.</li>
+          <li>Troubleshot network connectivity and hardware/software issues using internal ticketing systems.</li>
+          <li>Managed system updates, antivirus, backups, and firewall settings to ensure network stability.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Project Showcase</h2>
+      <div class="project">
+        <img src="https://via.placeholder.com/220x140?text=Sentiment+Analysis+Screenshot" alt="">
+        <div class="project-content">
+          <h3>SENTIMENT ANALYSIS ON COVID RELATED TWEETS</h3>
+          <p>
+            <strong>Description:</strong> Built an NLP-based sentiment classifier that outperformed baseline models by 10%, achieving 77% test accuracy.<br>
+            <strong>Problem Solved:</strong> Analyzed 10K+ real-time tweets to extract public sentiment trends during the pandemic.<br>
+            <strong>Technologies:</strong> Python, NLP, Tokenization, Lemmatization<br>
+            <strong>My Role:</strong> Designed and implemented preprocessing, feature engineering, and model evaluation.<br>
+          </p>
+          <div class="project-links">
+            <!-- Add your GitHub, demo, or documentation links here -->
+          </div>
+        </div>
+      </div>
+      <div class="project">
+        <img src="https://via.placeholder.com/220x140?text=Brain+Tumor+Segmentation" alt="">
+        <div class="project-content">
+          <h3>Brain Tumor Segmentation using Attention Gate Res-U-Net</h3>
+          <p>
+            <strong>Description:</strong> Developed a deep learning model for automated brain tumor detection, achieving a Dice coefficient of 0.7446.<br>
+            <strong>Problem Solved:</strong> Improved segmentation accuracy by 15% and reduced false positives by 10% using attention gates.<br>
+            <strong>Technologies:</strong> Python, TensorFlow, Keras, Deep Learning<br>
+            <strong>My Role:</strong> Model architecture, training, and evaluation on 600 MRI images.<br>
+          </p>
+          <div class="project-links">
+            <!-- Add your GitHub, demo, or documentation links here -->
+          </div>
+        </div>
+      </div>
+      <div class="project">
+        <img src="Visualization.png" alt="Heart Attack Visualization">
+        <div class="project-content">
+          <h3>Heart Attack Risk Visualization</h3>
+          <p>
+            <strong>Description:</strong> Created an interactive dashboard visualizing heart attack risk factors and case distributions across age groups, using 50,000+ cases.<br>
+            <strong>Problem Solved:</strong> Enabled exploration of risk factors using data from NHANES, MIMIC-IV, CDC, and AHA.<br>
+            <strong>Technologies:</strong> PowerBI, Excel, Data Visualization<br>
+            <strong>My Role:</strong> Data analysis, dashboard design, and reporting.<br>
+          </p>
+          <div class="project-links">
+            <!-- Add your GitHub, demo, or documentation links here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li>
+          <strong>Oklahoma Christian University</strong><br>
+          Master of Science in Computer Science and Engineering (GPA: 3.3)<br>
+          Coursework: Image Processing, Software Systems Engineering, Data Analytics & Visualization, Leadership
+        </li>
+        <li>
+          <strong>VelTech University</strong><br>
+          Bachelor’s in Computer Science and Engineering (GPA: 3.8)<br>
+          Coursework: Networking, SQL & Data Management, Data Cleaning
+        </li>
+      </ul>
+    </section>
+
+    <section id="certifications">
+      <h2>Courses and Certifications</h2>
+      <ul class="awards-list">
+        <li><i class="fas fa-certificate"></i> CCNAv7 - Introduction to Networks: Practical experience in network configuration, including IPv4/IPv6 addressing.</li>
+        <li><i class="fas fa-certificate"></i> Salesforce Developer Catalyst Plus: CRM and cloud platform experience</li>
+        <li><i class="fas fa-certificate"></i> AWS Academy Cloud Foundations: Basics of cloud networking and AWS services</li>
+      </ul>
+    </section>
+  </div>
+  <footer style="text-align:center;padding:2rem 0;color:#888;">
+    &copy; 2025 Ganesh Polimera &mdash; Designed & coded by Ganesh Polimera
+  </footer>
+  <script>
+    // Bouncy interaction for nav and resume buttons
+    document.querySelectorAll('nav a, .resume-link').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        btn.classList.remove('bounce');
+        void btn.offsetWidth; // trigger reflow
+        btn.classList.add('bounce');
+      });
+    });
+    // Fun ripple effect for skill cards
+    document.querySelectorAll('.skill-card').forEach(card => {
+      card.addEventListener('click', function(e) {
+        // Remove any old ripple
+        let oldRipple = card.querySelector('.ripple');
+        if (oldRipple) oldRipple.remove();
+        // Create ripple
+        let ripple = document.createElement('span');
+        ripple.className = 'ripple';
+        let rect = card.getBoundingClientRect();
+        let size = Math.max(rect.width, rect.height);
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = (e.clientX - rect.left - size/2) + 'px';
+        ripple.style.top = (e.clientY - rect.top - size/2) + 'px';
+        card.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+      });
+    });
+  </script>
+  <style>
+    /* Ripple effect for skill cards */
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(79,140,255,0.18);
+      transform: scale(0);
+      animation: rippleAnim 0.6s linear;
+      pointer-events: none;
+      z-index: 5;
+    }
+    @keyframes rippleAnim {
+      to {
+        transform: scale(2.6);
+        opacity: 0;
+      }
+    }
+  </style>
+</body>
+</html>
